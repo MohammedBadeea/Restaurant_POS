@@ -1,0 +1,472 @@
+/* General Body and Typography */
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Modern, clean font */
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    /* Very light grey background */
+    color: #343a40;
+    /* Dark grey for text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    /* A more prominent font for headings */
+    color: #212529;
+    margin-bottom: 15px;
+}
+
+.page-title {
+    color: #007bff;
+    /* Primary blue for main titles */
+    margin-bottom: 40px;
+    font-size: 3em;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Container for the Table Selection Screen */
+#tables-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Responsive columns */
+    gap: 25px;
+    /* Space between grid items */
+    width: 100%;
+    max-width: 1300px;
+    /* Max width for the grid */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Individual Table Card Styling */
+.table-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    /* More rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    /* Softer, more pronounced shadow */
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+    /* Larger cards */
+    border: 1px solid #e0e0e0;
+    /* Subtle border */
+}
+
+.table-card:hover {
+    transform: translateY(-8px);
+    /* More noticeable lift on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.table-card h2 {
+    margin: 0 0 10px 0;
+    color: #343a40;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.table-card p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 1em;
+}
+
+/* Table Status Indicators */
+.table-card.occupied {
+    background-color: #ffebee;
+    /* Light red for occupied */
+    border-color: #ef5350;
+    /* Red border */
+}
+
+.table-card.occupied h2 {
+    color: #d32f2f;
+    /* Darker red text */
+}
+
+.table-card.available {
+    background-color: #e8f5e9;
+    /* Light green for available */
+    border-color: #66bb6a;
+    /* Green border */
+}
+
+.table-card.available h2 {
+    color: #388e3c;
+    /* Darker green text */
+}
+
+/* General Button Styling */
+button {
+    background-color: #007bff;
+    /* Primary blue */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    /* More rounded buttons */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific button styles for Kitchen Display */
+.btn-preparing {
+    background-color: #ffc107;
+    /* Yellow for preparing */
+    color: #343a40;
+    margin-right: 10px;
+}
+
+.btn-preparing:hover {
+    background-color: #e0a800;
+}
+
+.btn-ready {
+    background-color: #28a745;
+    /* Green for ready */
+}
+
+.btn-ready:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+/* Modern Split Layout for Order Screen */
+.pos-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.order-sidebar {
+    width: 350px;
+    background: white;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.menu-section {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f1f3f5;
+}
+
+#items-container {
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
+    margin: 10px 0;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e9ecef;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item button {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    background-color: #6c757d;
+}
+
+.order-item button:hover {
+    background-color: #5a6268;
+}
+
+/* Menu Grid Container */
+#menu-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+    padding-top: 20px;
+}
+
+/* Category Navigation */
+.category-tabs {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+    overflow-x: auto;
+}
+
+.category-btn {
+    background-color: #fff;
+    color: #495057;
+    border: 1px solid #dee2e6;
+    padding: 10px 20px;
+    white-space: nowrap;
+    box-shadow: none;
+}
+
+.category-btn.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* Professional Menu Item Cards */
+#menu-buttons button {
+    background-color: #ffffff;
+    color: #212529;
+    border: 1px solid #e0e0e0;
+    font-size: 1.1rem;
+    padding: 25px 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 140px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#menu-buttons button:hover {
+    background-color: #ffffff;
+    border-color: #007bff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.1);
+}
+
+#menu-buttons .item-name {
+    font-weight: 600;
+    text-align: center;
+}
+
+#menu-buttons .price-tag {
+    background-color: #f8f9fa;
+    color: #007bff;
+    font-size: 0.9rem;
+    padding: 4px 12px;
+    border-radius: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+    border: 1px solid #e9ecef;
+}
+
+/* Sticky Totals Area */
+.order-totals {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 2px solid #333;
+}
+
+/* Receipt Screen Specifics */
+#receipt {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+#receipt h1 {
+    text-align: center;
+    color: #343a40;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#receipt h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#receipt-items .order-item {
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 1.1em;
+}
+
+#receipt hr {
+    border: 0;
+    border-top: 1px dashed #ced4da;
+    margin: 20px 0;
+}
+
+#receipt-subtotal,
+#receipt-tax,
+#receipt-total {
+    text-align: right;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+#receipt-total {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 15px;
+}
+
+#print-btn {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #6c757d;
+    /* Grey for print button */
+}
+
+#print-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Kitchen Display Specifics */
+#kitchen-orders {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#kitchen-orders .table-card {
+    /* Reusing table-card for kitchen orders */
+    background-color: #fff3cd;
+    /* Light yellow for kitchen orders */
+    border-color: #ffc107;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    text-align: left;
+    cursor: default;
+    transition: none;
+    /* No hover effect for kitchen cards */
+    transform: none;
+}
+
+#kitchen-orders .table-card h2 {
+    color: #856404;
+    font-size: 1.8em;
+    border-bottom: 1px solid #ffc107;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#kitchen-orders .table-card p {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #664d03;
+}
+
+#kitchen-orders .table-card button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    font-size: 0.95em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.5em;
+    }
+
+    #tables-container,
+    #kitchen-orders,
+    #menu-buttons {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .table-card {
+        padding: 20px;
+        min-height: 100px;
+    }
+
+    .table-card h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    #tables-container,
+    #kitchen-orders,
+    #menu-buttons {
+        grid-template-columns: 1fr;
+        /* Single column on very small screens */
+        gap: 10px;
+    }
+
+    .table-card {
+        padding: 15px;
+        min-height: 80px;
+    }
+
+    .table-card h2 {
+        font-size: 1.2em;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    #receipt {
+        padding: 20px;
+    }
+}

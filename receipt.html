@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Receipt</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="receipt">
+
+        <h1>Restaurant Receipt</h1>
+
+        <h2 id="receipt-table"></h2>
+
+        <div id="receipt-items"></div>
+
+        <hr>
+
+        <h2 id="receipt-subtotal"></h2>
+
+        <h2 id="receipt-tax"></h2>
+
+        <h1 id="receipt-total"></h1>
+
+        <br>
+
+        <button id="print-btn" onclick="window.print()">
+            🖨 Print Receipt
+        </button>
+
+    </div>
+
+    <script src="receipt.js"></script>
+
+</body>
+
+</html>

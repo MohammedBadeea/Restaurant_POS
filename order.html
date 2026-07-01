@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Order Screen</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="pos-container">
+        <!-- Left Side: Current Order Summary -->
+        <div class="order-sidebar">
+            <h1 id="table-title">Order</h1>
+            <div id="items-container"></div>
+
+            <div class="order-totals">
+                <h2 id="subtotal"></h2>
+                <h2 id="tax"></h2>
+                <h1 id="total-price"></h1>
+            </div>
+
+            <div class="controls">
+                <button id="receipt-btn" class="btn-ready">View Receipt</button>
+                <button id="close-order-btn" class="btn-danger">Close Order</button>
+            </div>
+        </div>
+
+        <!-- Right Side: Menu Selection -->
+        <div class="menu-section">
+            <div id="category-container" class="category-tabs"></div>
+            <div id="menu-buttons"></div>
+        </div>
+    </div>
+
+    <script src="order.js"></script>
+
+</body>
+
+</html>
